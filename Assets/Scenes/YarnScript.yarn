@@ -1,0 +1,139 @@
+﻿title: YarnScript
+---
+
+Narrtor: You find yourself in the Abandoned House, looking for the lost heirloom.
+Narrtor: The Stories about this place were frightening...
+    -> Explore the main hall.
+        <<jump mainhall>>
+    -> Leave the house.    
+        <<jump leave>>
+
+===
+
+title: leave
+
+---
+
+Narrtor: You decide to leave the house.
+Narrtor: Perhaps it was best not to disturb the past.
+    -> END.
+        <<jump end>>
+
+===
+
+
+title: mainhall
+
+---
+
+Narrtor: You examine a painting in the main hall.
+Narrtor: Then you hear a crack behind you...
+    -> Investigate the noise.
+        <<jump noise>>
+    -> Ignore it.
+        <<jump ignore>>
+       
+===
+
+title: noise
+
+---
+
+Narrtor: You look for the noise and find a book on the ground.
+Narrtor: You look at the bookshelf.
+Narrtor: You find a hidden compartment behind the bookshelf...
+    -> Open it.
+        <<jump compartment>>
+    -> Leave it.
+        <<jump ignore>>
+
+===
+
+title: ignore
+---
+
+Narrtor: You find nothing else.
+    -> Leave
+        <<jump leave>>
+
+       
+===
+
+title: compartment
+---
+
+Narrtor: You discover an ancient box! Could this be the heirloom?
+    -> Take the box.
+        <<jump takebox>>
+    -> Leave it.
+        <<jump leave>>
+       
+===
+
+title: back
+
+---
+
+Narrtor: You decide not to risk it and put the box back.
+    -> Leave
+        <<jump leave>>
+       
+===
+
+title: takebox
+
+---
+
+Narrtor: You took the box, and suddenly the room shakes!
+    -> Open it.
+        <<jump open>>
+    -> Put it back.
+        <<jump back>>
+       
+===
+
+title: open
+
+---
+
+Narrtor: Inside the box, you find the heirloom and a note about the curse.
+    -> Try to break the curse.
+        <<jump break>>
+    -> Leave the house.
+        <<jump curse>>
+       
+===
+
+title: break
+
+---
+
+Narrtor: You feel a surge of energy. The curse is broken!
+Narrtor: The house feels lighter.
+    -> Leave
+        <<jump end>>
+       
+===
+
+title: curse
+
+---
+
+Narrtor: You flee the house, leaving the curse behind.
+    -> END.
+        <<jump end>>
+       
+===
+
+title: end
+
+---
+
+Narrtor: You finished the story.
+Narrtor: Do you want to replay.
+    -> Yes.
+        <<jump YarnScript>>
+    -> No.
+    Narrtor: Too Bad.
+        <<jump YarnScript>>
+===
